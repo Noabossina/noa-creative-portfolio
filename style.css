@@ -1,0 +1,1397 @@
+/* Cleaned stylesheet — original design and effects preserved */
+
+/* BASISINSTELLING: haalt standaardmarges en -padding weg; border-box maakt afmetingen makkelijker te berekenen. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* PAGINA: smooth scroll zorgt dat ankerlinks, zoals #about, rustig naar de sectie bewegen. */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ALGEMENE STIJL: bepaalt achtergrondkleur, standaardtekstkleur en lettertype voor de hele website. */
+body {
+    background-color: #0a0a0a;
+    color: #f1f1ed;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+/* Stijlen voor navigatiebalk. Dit onderdeel: plaatst dit onderdeel precies ten opzichte van zijn positioneringscontext; maakt dit onderdeel een referentiepunt voor absoluut geplaatste elementen. */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 35px;
+    z-index: 10;
+}
+
+/* Stijlen voor logo. Dit onderdeel: stelt de tekstkleur in; bepaalt de tekstgrootte. */
+.logo {
+    color: #f1f1ed;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Stijlen voor navigatielinks. Dit onderdeel: zet de inhoud in een flexibele rij of kolom. */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+/* Stijlen voor navigatielinks. Dit onderdeel: stelt de tekstkleur in; bepaalt de tekstgrootte. */
+.nav-links a {
+    color: #f1f1ed;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* Stijlen voor grote openingssectie. Dit onderdeel: bepaalt de minimale hoogte; zet de inhoud in een flexibele rij of kolom. */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #333;
+}
+
+/* Stijlen voor inhoud van de openingssectie. Dit onderdeel: zet de inhoud in een flexibele rij of kolom; bepaalt de minimale hoogte. */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    padding: 0 35px 30px;
+}
+
+/* Stijlen voor grote openingssectie. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.hero h1 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(140px, 30vw, 500px);
+    font-weight: 700;
+    line-height: 0.72;
+    letter-spacing: -18px;
+    margin-left: -8px;
+    color: transparent;
+    -webkit-text-stroke: 2px #f1f1ed;
+    transition: 0.4s ease;
+}
+
+/* Hover-effect voor grote openingssectie: verandert de vormgeving wanneer je er met de muis overheen gaat. */
+.hero h1:hover {
+    color: #f1f1ed;
+    transform: skewX(-5deg);
+    letter-spacing: -10px;
+}
+
+/* Stijlen voor onderste navigatievakken van de homepage. Dit onderdeel: bepaalt de tekstgrootte. */
+.hero-bottom {
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Stijlen voor Over mij-sectie. Dit onderdeel: plaatst dit onderdeel precies ten opzichte van zijn positioneringscontext; maakt dit onderdeel een referentiepunt voor absoluut geplaatste elementen. */
+.about {
+    position: relative;
+}
+
+/* Stijlen voor section number. Dit onderdeel: bepaalt de tekstgrootte. */
+.section-number {
+    font-size: 10px;
+    margin-bottom: 100px;
+}
+
+/* Stijlen voor Over mij-sectie. Dit onderdeel: bepaalt de tekstgrootte; past de afstand tussen letters aan. */
+.about h2 {
+    font-size: clamp(45px, 8vw, 120px);
+    max-width: 1200px;
+    line-height: 0.9;
+    letter-spacing: -4px;
+}
+
+/* Stijlen voor about text. Dit onderdeel: bepaalt de tekstgrootte. */
+.about-text {
+    max-width: 400px;
+    margin-top: 80px;
+    margin-left: auto;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Stijlen voor kleine tekst bovenaan de homepage. Dit onderdeel: zet de inhoud in een flexibele rij of kolom; bepaalt de tekstgrootte. */
+.hero-top-text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding-top: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #444;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* Stijlen voor titelgebied van de homepage. */
+.hero-title {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Stijlen voor klein label bij de hoofdtitel. Dit onderdeel: bepaalt de tekstgrootte; past de afstand tussen letters aan. */
+.hero-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* Stijlen voor onderste navigatievakken van de homepage. */
+.hero-bottom {
+    margin-top: 20px;
+}
+
+/* Stijlen voor klikbaar vak onderaan de hero. Dit onderdeel: bepaalt de minimale hoogte; bepaalt de tekstgrootte. */
+.bottom-column {
+    min-height: 110px;
+    padding: 15px;
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Richt zich op klikbaar vak onderaan de hero dat direct volgt op een vergelijkbaar element; handig voor scheidingslijnen. */
+.bottom-column+.bottom-column {
+    border-left: 1px solid #444;
+}
+
+/* Stijlen voor volgnummer van het vak. Dit onderdeel: bepaalt de tekstgrootte; regelt transparantie. */
+.bottom-number {
+    font-size: 8px;
+    opacity: 0.5;
+}
+
+/* Stijlen voor bottom right. */
+.bottom-right {
+    text-align: right;
+}
+
+/* Stijlen voor hero description. */
+.hero-description {
+    text-align: center;
+}
+
+/* Stijlen voor scroll link. Dit onderdeel: stelt de tekstkleur in; bepaalt de tekstgrootte. */
+.scroll-link {
+    color: #f1f1ed;
+    text-decoration: none;
+    text-align: right;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.hero-label,
+.hero-code,
+.hero-top-text,
+/* Stijlen voor onderste navigatievakken van de homepage. Dit onderdeel: regelt transparantie; start een animatie. */
+.hero-bottom {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Stijlen voor titelgebied van de homepage. Dit onderdeel: regelt transparantie; start een animatie. */
+.hero-title {
+    opacity: 0;
+    animation: titleIn 1.2s ease 0.2s forwards;
+}
+
+/* Stijlen voor onderste navigatievakken van de homepage. */
+.hero-bottom {
+    animation-delay: 0.7s;
+}
+
+/* Stijlen voor kleine tekst bovenaan de homepage. */
+.hero-top-text {
+    animation-delay: 0.1s;
+}
+
+/* Stijlen voor klein label bij de hoofdtitel. */
+.hero-label {
+    animation-delay: 0.4s;
+}
+
+/* Stijlen voor extra code/label in de hero. */
+.hero-code {
+    animation-delay: 0.6s;
+}
+
+/* ANIMATIE fadeIn: Laat tekst geleidelijk verschijnen en iets omhoog bewegen. */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ANIMATIE titleIn: Laat de hoofdtitel binnenkomen met een beweging en veranderende letterafstand. */
+@keyframes titleIn {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+        letter-spacing: 10px;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stijlen voor titelgebied van de homepage. Dit onderdeel: plaatst dit onderdeel precies ten opzichte van zijn positioneringscontext; maakt dit onderdeel een referentiepunt voor absoluut geplaatste elementen. */
+.hero-title {
+    position: relative;
+    z-index: 1;
+}
+
+/* Stijlen voor portretlagen in de hero. Dit onderdeel: bepaalt welk element voor of achter andere elementen staat. */
+.hero-portrait {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Stijlen voor portretafbeelding. Dit onderdeel: plaatst dit onderdeel precies ten opzichte van zijn positioneringscontext; maakt dit onderdeel een referentiepunt voor absoluut geplaatste elementen. */
+.hero-image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 75vh;
+    width: auto;
+}
+
+/* Stijlen voor originele portretlaag. Dit onderdeel: regelt transparantie. */
+.hero-image-main {
+    opacity: 0.9;
+}
+
+/* Stijlen voor rode glitch-laag. Dit onderdeel: regelt transparantie; start een animatie. */
+.hero-image-red {
+    opacity: 0.25;
+    filter: sepia(1) saturate(10000%) hue-rotate(-40deg);
+    mix-blend-mode: screen;
+    animation: glitchRed 1.2s infinite steps(2, end);
+}
+
+/* Stijlen voor blauwe glitch-laag. Dit onderdeel: regelt transparantie; start een animatie. */
+.hero-image-cyan {
+    opacity: 0.25;
+    filter: hue-rotate(180deg) saturate(8);
+    mix-blend-mode: screen;
+    animation: glitchCyan 1.2s infinite steps(2, end);
+}
+
+.hero h1,
+.hero-label,
+/* Stijlen voor extra code/label in de hero. Dit onderdeel: plaatst dit onderdeel precies ten opzichte van zijn positioneringscontext; maakt dit onderdeel een referentiepunt voor absoluut geplaatste elementen. */
+.hero-code {
+    position: relative;
+    z-index: 2;
+}
+
+/* ANIMATIE glitchRed: Verplaatst en knipt de rode afbeeldingslaag voor het glitch-effect. */
+@keyframes glitchRed {
+    0% {
+        transform: translate(-50%, -50%);
+        clip-path: inset(0 0 0 0);
+    }
+
+    20% {
+        transform: translate(calc(-50% - 6px), calc(-50% + 2px));
+        clip-path: inset(8% 0 72% 0);
+    }
+
+    40% {
+        transform: translate(calc(-50% + 4px), calc(-50% - 2px));
+        clip-path: inset(40% 0 35% 0);
+    }
+
+    60% {
+        transform: translate(calc(-50% - 3px), calc(-50% + 4px));
+        clip-path: inset(70% 0 10% 0);
+    }
+
+    80% {
+        transform: translate(calc(-50% + 5px), calc(-50% - 1px));
+        clip-path: inset(18% 0 58% 0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* ANIMATIE glitchCyan: Verplaatst en knipt de cyaanblauwe afbeeldingslaag voor het glitch-effect. */
+@keyframes glitchCyan {
+    0% {
+        transform: translate(-50%, -50%);
+        clip-path: inset(0 0 0 0);
+    }
+
+    20% {
+        transform: translate(calc(-50% + 6px), calc(-50% - 2px));
+        clip-path: inset(12% 0 65% 0);
+    }
+
+    40% {
+        transform: translate(calc(-50% - 4px), calc(-50% + 3px));
+        clip-path: inset(48% 0 28% 0);
+    }
+
+    60% {
+        transform: translate(calc(-50% + 3px), calc(-50% - 4px));
+        clip-path: inset(75% 0 8% 0);
+    }
+
+    80% {
+        transform: translate(calc(-50% - 5px), calc(-50% + 1px));
+        clip-path: inset(22% 0 52% 0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* Stijlen voor Over mij-sectie. Dit onderdeel: bepaalt de minimale hoogte; zet de inhoud in een flexibele rij of kolom. */
+.about {
+    min-height: 100vh;
+    padding: 35px;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Stijlen voor bovenste informatiebalk van Over mij. Dit onderdeel: maakt een raster voor een nette indeling; verdeelt het raster in kolommen. */
+.about-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* Richt zich alleen op het tweede element binnen bovenste informatiebalk van Over mij, bijvoorbeeld om tekst te centreren. */
+.about-header p:nth-child(2) {
+    text-align: center;
+}
+
+/* Richt zich alleen op het derde element binnen bovenste informatiebalk van Over mij, bijvoorbeeld om tekst rechts uit te lijnen. */
+.about-header p:nth-child(3) {
+    text-align: right;
+}
+
+/* Stijlen voor grote titel van Over mij. */
+.about-title {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+/* Stijlen voor grote titel van Over mij. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.about-title h2 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(60px, 10vw, 160px);
+    font-weight: 400;
+    line-height: 0.82;
+    letter-spacing: -5px;
+    max-width: 1100px;
+}
+
+/* Stijlen voor tekstkolommen van Over mij. Dit onderdeel: maakt een raster voor een nette indeling; verdeelt het raster in kolommen. */
+.about-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+.about-intro,
+/* Stijlen voor extra introductietekst. Dit onderdeel: bepaalt de tekstgrootte. */
+.about-extra {
+    max-width: 420px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Stijlen voor extra introductietekst. */
+.about-extra {
+    margin-left: auto;
+}
+
+/* Stijlen voor klikbaar vak onderaan de hero. Dit onderdeel: maakt een verandering vloeiend. */
+.bottom-column {
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+        color 0.3s ease,
+        padding 0.3s ease;
+}
+
+/* Hover-effect voor klikbaar vak onderaan de hero: verandert de vormgeving wanneer je er met de muis overheen gaat. */
+.bottom-column:hover {
+    background-color: #f1f1ed;
+    color: #0a0a0a;
+    padding-left: 25px;
+}
+
+/* Stijlen voor onderste navigatievakken van de homepage. Dit onderdeel: maakt een raster voor een nette indeling; verdeelt het raster in kolommen. */
+.hero-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+    position: relative;
+    z-index: 5;
+    background-color: #0a0a0a;
+}
+
+/* Stijlen voor klikbaar vak onderaan de hero. Dit onderdeel: bepaalt de minimale hoogte; stelt de tekstkleur in. */
+a.bottom-column {
+    min-height: 120px;
+    padding: 15px;
+    color: #f1f1ed;
+    text-decoration: none;
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s ease;
+}
+
+/* Richt zich op klikbaar vak onderaan de hero dat direct volgt op een vergelijkbaar element; handig voor scheidingslijnen. */
+a.bottom-column+a.bottom-column {
+    border-left: 1px solid #444;
+}
+
+/* Hover-effect voor klikbaar vak onderaan de hero: verandert de vormgeving wanneer je er met de muis overheen gaat. */
+a.bottom-column:hover {
+    background-color: #f1f1ed;
+    color: #0a0a0a;
+    padding-left: 25px;
+}
+
+/* Stijlen voor portretlagen in de hero. Dit onderdeel: plaatst dit onderdeel precies ten opzichte van zijn positioneringscontext; maakt dit onderdeel een referentiepunt voor absoluut geplaatste elementen. */
+.hero-portrait {
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+}
+
+/* Stijlen voor interests header. Dit onderdeel: bepaalt de minimale hoogte. */
+.interests-header {
+    min-height: 100vh;
+    padding: 120px 35px 35px;
+}
+
+/* Stijlen voor interests intro. Dit onderdeel: bepaalt de minimale hoogte; zet de inhoud in een flexibele rij of kolom. */
+.interests-intro {
+    min-height: calc(100vh -155px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Stijlen voor page number. Dit onderdeel: bepaalt de tekstgrootte; past de afstand tussen letters aan. */
+.page-number {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+/* Stijlen voor interests intro. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.interests-intro h1 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(80px, 15vw, 220px);
+    font-weight: 400;
+    line-height: 0.78;
+    letter-spacing: -8px;
+}
+
+/* Stijlen voor interests description. Dit onderdeel: bepaalt de tekstgrootte. */
+.interests-description {
+    max-width: 400px;
+    margin-top: 50px;
+    margin-left: auto;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Stijlen voor pagina met interesses. */
+.interests-page {
+    padding: 0 35px 35px;
+}
+
+/* Stijlen voor openingsgedeelte van interesses. Dit onderdeel: bepaalt de minimale hoogte; zet de inhoud in een flexibele rij of kolom. */
+.interests-hero {
+    min-height: 100vh;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Stijlen voor interests top. Dit onderdeel: maakt een raster voor een nette indeling; verdeelt het raster in kolommen. */
+.interests-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* Richt zich alleen op het tweede element binnen interests top, bijvoorbeeld om tekst te centreren. */
+.interests-top p:nth-child(2) {
+    text-align: center;
+}
+
+/* Richt zich alleen op het derde element binnen interests top, bijvoorbeeld om tekst rechts uit te lijnen. */
+.interests-top p:nth-child(3) {
+    text-align: right;
+}
+
+/* Stijlen voor openingsgedeelte van interesses. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.interests-hero h1 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(90px, 16vw, 250px);
+    font-weight: 400;
+    line-height: 0.75;
+    letter-spacing: -9px;
+}
+
+/* Stijlen voor interests intro text. Dit onderdeel: bepaalt de tekstgrootte. */
+.interests-intro-text {
+    max-width: 420px;
+    margin-left: auto;
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Stijlen voor lijst met interessekaarten. */
+.interest-list {
+    border-top: 1px solid #444;
+}
+
+/* Stijlen voor klikbare interessekaart. Dit onderdeel: bepaalt de minimale hoogte; maakt een raster voor een nette indeling. */
+.interest-card {
+    min-height: 170px;
+    padding: 20px 10px;
+    border-bottom: 1px solid #444;
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+    align-items: center;
+    color: #f1f1ed;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: 0.35s ease;
+}
+
+/* Stijlen voor nummer naast interesse. Dit onderdeel: bepaalt de tekstgrootte; past de afstand tussen letters aan. */
+.interest-number {
+    font-size: 9px;
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+
+/* Stijlen voor klikbare interessekaart. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.interest-card h2 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(50px, 8vw, 130px);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -4px;
+    transition: 0.35s ease;
+}
+
+/* Stijlen voor pijl van een interessekaart. Dit onderdeel: bepaalt de tekstgrootte; maakt een verandering vloeiend. */
+.interest-arrow {
+    text-align: right;
+    font-size: 28px;
+    transition: 0.35s ease;
+}
+
+/* Hover-effect voor klikbare interessekaart: verandert de vormgeving wanneer je er met de muis overheen gaat. */
+.interest-card:hover {
+    background-color: #f1f1ed;
+    color: #0a0a0a;
+}
+
+/* Hover-effect voor klikbare interessekaart: verandert de vormgeving wanneer je er met de muis overheen gaat. */
+.interest-card:hover h2 {
+    transform: translateX(25px);
+}
+
+/* Hover-effect voor klikbare interessekaart: verandert de vormgeving wanneer je er met de muis overheen gaat. */
+.interest-card:hover .interest-arrow {
+    transform: translate(8px, 8px);
+}
+
+/* Stijlen voor filmpagina. */
+.film-page {
+    padding: 0 35px 60px;
+}
+
+/* Stijlen voor openingsgedeelte van de filmpagina. Dit onderdeel: bepaalt de minimale hoogte; zet de inhoud in een flexibele rij of kolom. */
+.film-hero {
+    min-height: 100vh;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Stijlen voor film top. Dit onderdeel: maakt een raster voor een nette indeling; verdeelt het raster in kolommen. */
+.film-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* Richt zich alleen op het tweede element binnen film top, bijvoorbeeld om tekst te centreren. */
+.film-top p:nth-child(2) {
+    text-align: center;
+}
+
+/* Richt zich alleen op het derde element binnen film top, bijvoorbeeld om tekst rechts uit te lijnen. */
+.film-top p:nth-child(3) {
+    text-align: right;
+}
+
+/* Stijlen voor openingsgedeelte van de filmpagina. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.film-hero h1 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(130px, 25vw, 400px);
+    font-weight: 400;
+    line-height: 0.75;
+    letter-spacing: -12px;
+}
+
+/* Stijlen voor film intro. Dit onderdeel: bepaalt de tekstgrootte. */
+.film-intro {
+    max-width: 500px;
+    margin-left: auto;
+    margin-bottom: 50px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Stijlen voor sectie met filmgenres. */
+.film-genres {
+    padding: 100px 0;
+}
+
+/* Stijlen voor section label. Dit onderdeel: bepaalt de tekstgrootte; past de afstand tussen letters aan. */
+.section-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+/* Stijlen voor rij met een filmgenre. Dit onderdeel: maakt een raster voor een nette indeling; verdeelt het raster in kolommen. */
+.genre-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 300px;
+    align-items: center;
+    padding: 30px 0;
+    border-top: 1px solid #444;
+}
+
+/* Past alleen het laatste element in rij met een filmgenre aan. */
+.genre-row:last-child {
+    border-bottom: 1px solid #444;
+}
+
+/* Stijlen voor rij met een filmgenre. Dit onderdeel: bepaalt de tekstgrootte; regelt transparantie. */
+.genre-row span {
+    font-size: 9px;
+    opacity: 0.5;
+}
+
+/* Stijlen voor rij met een filmgenre. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.genre-row h2 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(50px, 7vw, 110px);
+    font-weight: 400;
+}
+
+/* Stijlen voor rij met een filmgenre. Dit onderdeel: bepaalt de tekstgrootte. */
+.genre-row p {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Stijlen voor gedeelte met korte films. */
+.short-films {
+    padding: 100px 0;
+}
+
+/* Stijlen voor section heading. */
+.section-heading {
+    border-bottom: 1px solid #444;
+    margin-bottom: 40px;
+}
+
+/* Stijlen voor section heading. Dit onderdeel: bepaalt de tekstgrootte; past de afstand tussen letters aan. */
+.section-heading p {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* Stijlen voor section heading. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.section-heading h2 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(70px, 11vw, 170px);
+    font-weight: 400;
+    letter-spacing: -6px;
+}
+
+/* Stijlen voor een filmproject. */
+.film-project {
+    margin-bottom: 100px;
+}
+
+/* Stijlen voor een filmproject. Dit onderdeel: bepaalt hoe afbeeldingen of video in hun kader passen; stelt de achtergrondkleur in. */
+.film-project video {
+    width: 100%;
+    max-height: 750px;
+    object-fit: cover;
+    background-color: #111;
+}
+
+/* Stijlen voor informatie onder een film. Dit onderdeel: maakt een raster voor een nette indeling; verdeelt het raster in kolommen. */
+.film-project-info {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    gap: 30px;
+    padding-top: 15px;
+}
+
+/* Stijlen voor informatie onder een film. Dit onderdeel: bepaalt de tekstgrootte. */
+.film-project-info p {
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* Stijlen voor informatie onder een film. Dit onderdeel: bepaalt de tekstgrootte. */
+.film-project-info h3 {
+    font-size: 24px;
+}
+
+/* Stijlen voor Letterboxd-gedeelte. Dit onderdeel: bepaalt de minimale hoogte; zet de inhoud in een flexibele rij of kolom. */
+.letterboxd-section {
+    min-height: 80vh;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+}
+
+/* Stijlen voor Letterboxd-gedeelte. Dit onderdeel: bepaalt de tekstgrootte; past de afstand tussen letters aan. */
+.letterboxd-section>p {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* Stijlen voor Letterboxd-gedeelte. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.letterboxd-section h2 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(70px, 12vw, 190px);
+    font-weight: 400;
+    line-height: 0.82;
+    letter-spacing: -7px;
+}
+
+/* Stijlen voor knop naar Letterboxd. Dit onderdeel: voegt een rand toe; stelt de tekstkleur in. */
+.letterboxd-button {
+    width: fit-content;
+    padding: 15px 25px;
+    border: 1px solid #f1f1ed;
+    color: #f1f1ed;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    transition: 0.3s ease;
+}
+
+/* Hover-effect voor knop naar Letterboxd: verandert de vormgeving wanneer je er met de muis overheen gaat. */
+.letterboxd-button:hover {
+    background-color: #f1f1ed;
+    color: #0a0a0a;
+}
+
+/* Stijlen voor een favoriete film. Dit onderdeel: bepaalt de tekstgrootte; past de afstand tussen letters aan. */
+.favorite-film p {
+    margin-top: 10px;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+/* Stijlen voor favoriete films. */
+.favorite-films {
+    padding: 120px 0;
+}
+
+/* Stijlen voor raster met filmposters. Dit onderdeel: maakt een raster voor een nette indeling; verdeelt het raster in kolommen. */
+.favorite-film-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+/* Vormgeving voor afbeeldingen in een favoriete film; regelt onder meer formaat en weergave. */
+.favorite-film img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s ease;
+}
+
+/* Hover-effect voor een favoriete film: verandert de vormgeving wanneer je er met de muis overheen gaat. */
+.favorite-film:hover img {
+    transform: translateY(-8px);
+}
+
+/* Stijlen voor favorite number. Dit onderdeel: bepaalt de tekstgrootte; past de afstand tussen letters aan. */
+.favorite-number {
+    margin-top: 12px;
+    font-size: 8px;
+    letter-spacing: 1px;
+    opacity: 0.5;
+}
+
+/* Stijlen voor een favoriete film. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.favorite-film h3 {
+    margin-top: 5px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* Stijlen voor fotografiepagina. */
+.photo-page {
+    padding: 0 35px 60px;
+}
+
+/* Stijlen voor openingsgedeelte fotografie. Dit onderdeel: bepaalt de minimale hoogte; zet de inhoud in een flexibele rij of kolom. */
+.photo-hero {
+    min-height: 70vh;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Stijlen voor photo top. Dit onderdeel: maakt een raster voor een nette indeling; verdeelt het raster in kolommen. */
+.photo-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* Richt zich alleen op het tweede element binnen photo top, bijvoorbeeld om tekst te centreren. */
+.photo-top p:nth-child(2) {
+    text-align: center;
+}
+
+/* Richt zich alleen op het derde element binnen photo top, bijvoorbeeld om tekst rechts uit te lijnen. */
+.photo-top p:nth-child(3) {
+    text-align: right;
+}
+
+/* Stijlen voor openingsgedeelte fotografie. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.photo-hero h1 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(80px, 14vw, 220px);
+    font-weight: 400;
+    line-height: 0.8;
+    letter-spacing: -8px;
+}
+
+/* Stijlen voor photo intro. Dit onderdeel: bepaalt de tekstgrootte. */
+.photo-intro {
+    max-width: 400px;
+    margin-left: auto;
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Stijlen voor fotogalerij. */
+.photo-grid {
+    columns: 3;
+    column-gap: 15px;
+}
+
+/* Vormgeving voor afbeeldingen in fotogalerij; regelt onder meer formaat en weergave. */
+.photo-grid img {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+    break-inside: avoid;
+    transition: 0.4s ease;
+}
+
+/* Hover-effect voor fotogalerij: verandert de vormgeving wanneer je er met de muis overheen gaat. */
+.photo-grid img:hover {
+    transform: scale(0.98);
+}
+
+/* Stijlen voor muziekpagina. */
+.music-page {
+    padding: 0 35px 60px;
+}
+
+/* Stijlen voor openingsgedeelte muziek. Dit onderdeel: bepaalt de minimale hoogte; zet de inhoud in een flexibele rij of kolom. */
+.music-hero {
+    min-height: 100vh;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Stijlen voor music top. Dit onderdeel: maakt een raster voor een nette indeling; verdeelt het raster in kolommen. */
+.music-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* Richt zich alleen op het tweede element binnen music top, bijvoorbeeld om tekst te centreren. */
+.music-top p:nth-child(2) {
+    text-align: center;
+}
+
+/* Richt zich alleen op het derde element binnen music top, bijvoorbeeld om tekst rechts uit te lijnen. */
+.music-top p:nth-child(3) {
+    text-align: right;
+}
+
+/* Stijlen voor openingsgedeelte muziek. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.music-hero h1 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(100px, 18vw, 280px);
+    font-weight: 400;
+    line-height: 0.72;
+    letter-spacing: -10px;
+}
+
+/* Stijlen voor music intro. Dit onderdeel: bepaalt de tekstgrootte. */
+.music-intro {
+    max-width: 450px;
+    margin-left: auto;
+    margin-bottom: 50px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Stijlen voor favoriete muziek. */
+.music-favorites {
+    padding: 120px 0;
+}
+
+/* Stijlen voor raster met muziekkaarten. Dit onderdeel: maakt een raster voor een nette indeling; verdeelt het raster in kolommen. */
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* Stijlen voor houder voor een albumcover. */
+.music-cover {
+    overflow: hidden;
+}
+
+/* Vormgeving voor afbeeldingen in houder voor een albumcover; regelt onder meer formaat en weergave. */
+.music-cover img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s ease;
+}
+
+/* Hover-effect voor muziekkaart: verandert de vormgeving wanneer je er met de muis overheen gaat. */
+.music-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Stijlen voor muziekkaart. Dit onderdeel: bepaalt de tekstgrootte; regelt transparantie. */
+.music-card span {
+    display: block;
+    margin-top: 12px;
+    font-size: 8px;
+    opacity: 0.5;
+}
+
+/* Stijlen voor muziekkaart. Dit onderdeel: bepaalt de tekstgrootte. */
+.music-card h3 {
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Stijlen voor muziekkaart. Dit onderdeel: bepaalt de tekstgrootte; regelt transparantie. */
+.music-card p {
+    margin-top: 3px;
+    font-size: 10px;
+    opacity: 0.6;
+}
+
+/* Stijlen voor gedeelte met liveoptreden. */
+.live-music {
+    padding: 120px 0;
+}
+
+/* Stijlen voor video van liveoptreden. Dit onderdeel: stelt de achtergrondkleur in; bepaalt hoe afbeeldingen of video in hun kader passen. */
+.live-video {
+    width: 100%;
+    max-height: 800px;
+    background-color: #111;
+    object-fit: cover;
+}
+
+/* Stijlen voor informatie bij liveoptreden. Dit onderdeel: maakt een raster voor een nette indeling; verdeelt het raster in kolommen. */
+.live-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding: 15px 0;
+    border-bottom: 1px solid #444;
+}
+
+/* Stijlen voor informatie bij liveoptreden. Dit onderdeel: bepaalt de tekstgrootte. */
+.live-info p {
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* Stijlen voor gedeelte over liedjes schrijven. Dit onderdeel: bepaalt de minimale hoogte; zet de inhoud in een flexibele rij of kolom. */
+.songwriting {
+    min-height: 100vh;
+    padding: 120px 0;
+    border-top: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Stijlen voor gedeelte over liedjes schrijven. Dit onderdeel: bepaalt de tekstgrootte; past de afstand tussen letters aan. */
+.songwriting>p:first-child {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* Stijlen voor gedeelte over liedjes schrijven. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.songwriting h2 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(70px, 12vw, 190px);
+    font-weight: 400;
+    line-height: 0.8;
+    letter-spacing: -7px;
+}
+
+/* Stijlen voor songwriting text. Dit onderdeel: bepaalt de tekstgrootte. */
+.songwriting-text {
+    max-width: 420px;
+    margin-left: auto;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Stijlen voor raster met Spotify-embeds. Dit onderdeel: maakt een raster voor een nette indeling; verdeelt het raster in kolommen. */
+.spotify-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Stijlen voor apart Spotify-nummer. */
+.spotify-item {
+    padding: 15px 0;
+    border-top: 1px solid #444;
+}
+
+/* Stijlen voor apart Spotify-nummer. Dit onderdeel: bepaalt de tekstgrootte; past de afstand tussen letters aan. */
+.spotify-item>p {
+    margin-bottom: 10px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    opacity: 0.5;
+}
+
+/* Vormgeving van ingesloten media binnen apart Spotify-nummer, zoals een YouTube- of Spotify-speler. */
+.spotify-item iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+}
+
+/* Stijlen voor gedeelte over eigen muziek. Dit onderdeel: bepaalt de minimale hoogte; zet de inhoud in een flexibele rij of kolom. */
+.own-music {
+    min-height: 80vh;
+    padding: 120px 0;
+    border-top: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Stijlen voor own music label. Dit onderdeel: bepaalt de tekstgrootte; past de afstand tussen letters aan. */
+.own-music-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* Stijlen voor gedeelte over eigen muziek. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.own-music h2 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(80px, 14vw, 220px);
+    font-weight: 400;
+    line-height: 0.8;
+    letter-spacing: -8px;
+}
+
+/* Stijlen voor onderste tekst en knop van eigen muziek. Dit onderdeel: zet de inhoud in een flexibele rij of kolom. */
+.own-music-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+/* Stijlen voor onderste tekst en knop van eigen muziek. Dit onderdeel: bepaalt de tekstgrootte. */
+.own-music-bottom p {
+    max-width: 400px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Stijlen voor knop naar Instagram-muziek. Dit onderdeel: voegt een rand toe; stelt de tekstkleur in. */
+.instagram-music-button {
+    padding: 15px 25px;
+    border: 1px solid #f1f1ed;
+    color: #f1f1ed;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    transition: 0.3s ease;
+}
+
+/* Hover-effect voor knop naar Instagram-muziek: verandert de vormgeving wanneer je er met de muis overheen gaat. */
+.instagram-music-button:hover {
+    background-color: #f1f1ed;
+    color: #0a0a0a;
+}
+
+/* Stijlen voor grote titel van Over mij. Dit onderdeel: plaatst dit onderdeel precies ten opzichte van zijn positioneringscontext; maakt dit onderdeel een referentiepunt voor absoluut geplaatste elementen. */
+.about-title {
+    position: relative;
+}
+
+/* Stijlen voor container om de Over mij-foto te positioneren. Dit onderdeel: plaatst dit onderdeel precies ten opzichte van zijn positioneringscontext; maakt dit onderdeel een referentiepunt voor absoluut geplaatste elementen. */
+.about-photo-wrap {
+    position: absolute;
+    right: -2%;
+    top: 55%;
+    transform: translateY(-50%);
+    width: min(750px, 58vw);
+    z-index: 1;
+}
+
+/* Stijlen voor portretfoto bij Over mij. */
+.about-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Stijlen voor grote titel van Over mij. Dit onderdeel: plaatst dit onderdeel precies ten opzichte van zijn positioneringscontext; maakt dit onderdeel een referentiepunt voor absoluut geplaatste elementen. */
+.about-title h2 {
+    position: relative;
+    z-index: 2;
+}
+
+/* Stijlen voor contactpagina. */
+.contact-page {
+    padding: 0 35px 60px;
+}
+
+/* Stijlen voor openingsgedeelte contact. Dit onderdeel: bepaalt de minimale hoogte; zet de inhoud in een flexibele rij of kolom. */
+.contact-hero {
+    min-height: 100vh;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Stijlen voor contact top. Dit onderdeel: maakt een raster voor een nette indeling; verdeelt het raster in kolommen. */
+.contact-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* Richt zich alleen op het tweede element binnen contact top, bijvoorbeeld om tekst te centreren. */
+.contact-top p:nth-child(2) {
+    text-align: center;
+}
+
+/* Richt zich alleen op het derde element binnen contact top, bijvoorbeeld om tekst rechts uit te lijnen. */
+.contact-top p:nth-child(3) {
+    text-align: right;
+}
+
+/* Stijlen voor contact title. */
+.contact-title {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Stijlen voor contact small. Dit onderdeel: bepaalt de tekstgrootte; past de afstand tussen letters aan. */
+.contact-small {
+    margin-bottom: 15px;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* Stijlen voor contact title. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.contact-title h1 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(100px, 18vw, 280px);
+    font-weight: 400;
+    line-height: 0.72;
+    letter-spacing: -10px;
+}
+
+/* Stijlen voor contact intro. Dit onderdeel: zet de inhoud in een flexibele rij of kolom. */
+.contact-intro {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 40px;
+}
+
+/* Stijlen voor contact intro. Dit onderdeel: bepaalt de tekstgrootte. */
+.contact-intro p {
+    max-width: 430px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Stijlen voor lijst met contactmogelijkheden. */
+.contact-links {
+    border-top: 1px solid #444;
+}
+
+/* Stijlen voor klikbare contactoptie. Dit onderdeel: bepaalt de minimale hoogte; maakt een raster voor een nette indeling. */
+.contact-link {
+    min-height: 180px;
+    display: grid;
+    grid-template-columns: 70px 1fr 1fr 60px;
+    align-items: center;
+    padding: 20px 10px;
+    border-bottom: 1px solid #444;
+    color: #f1f1ed;
+    text-decoration: none;
+    transition: 0.35s ease;
+}
+
+/* Stijlen voor klikbare contactoptie. Dit onderdeel: bepaalt de tekstgrootte; regelt transparantie. */
+.contact-link>span:first-child {
+    font-size: 9px;
+    opacity: 0.5;
+}
+
+/* Stijlen voor klikbare contactoptie. Dit onderdeel: kiest het lettertype; bepaalt de tekstgrootte. */
+.contact-link h2 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(45px, 6vw, 95px);
+    font-weight: 400;
+    letter-spacing: -3px;
+}
+
+/* Stijlen voor klikbare contactoptie. Dit onderdeel: bepaalt de tekstgrootte; past de afstand tussen letters aan. */
+.contact-link p {
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* Stijlen voor pijl bij een contactoptie. Dit onderdeel: bepaalt de tekstgrootte; maakt een verandering vloeiend. */
+.contact-arrow {
+    text-align: right;
+    font-size: 25px;
+    transition: 0.35s ease;
+}
+
+/* Hover-effect voor klikbare contactoptie: verandert de vormgeving wanneer je er met de muis overheen gaat. */
+.contact-link:hover {
+    background-color: #f1f1ed;
+    color: #0a0a0a;
+}
+
+/* Hover-effect voor klikbare contactoptie: verandert de vormgeving wanneer je er met de muis overheen gaat. */
+.contact-link:hover .contact-arrow {
+    transform: translate(7px, -7px);
+}
+
+/* Vormgeving van ingesloten media binnen een filmproject, zoals een YouTube- of Spotify-speler. */
+.film-project iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: none;
+    border-radius: 8px;
+}

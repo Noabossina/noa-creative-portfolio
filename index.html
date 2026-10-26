@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- Geeft aan dat dit een HTML5-document is. -->
+<html lang="en">
+<!-- De taal van de website is Engels. -->
+
+<head>
+    <!-- In de head staat informatie voor de browser die niet direct op de pagina verschijnt. -->
+    <meta charset="UTF-8">
+    <!-- Zorgt dat bijzondere tekens goed worden weergegeven. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Zorgt voor een goede schaal op telefoons en andere schermformaten. -->
+    <title>Noa - Creative Portfolio</title>
+    <!-- Dit is de titel die je in het browsertabblad ziet. -->
+
+    <!-- Bereidt de verbinding met Google Fonts voor, zodat lettertypen sneller kunnen laden. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Laadt de lettertypen Bodoni Moda en Space Grotesk. -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Koppelt het externe CSS-bestand voor de vormgeving aan deze HTML-pagina. -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- In de body staat alle inhoud die op de website te zien is. -->
+
+    <!-- HEADER / HERO: het bovenste, eerste scherm van de homepage. -->
+    <header class="hero">
+        <!-- NAVIGATIE: het logo en de links naar andere onderdelen of pagina's. -->
+        <nav class="navbar">
+            <!-- Het logo is een link terug naar de homepage. -->
+            <a href="index.html" class="logo">NB</a>
+
+            <!-- Groep met navigatielinks. -->
+            <div class="nav-links">
+                <!-- #about verwijst naar het onderdeel met id="about" op deze pagina. -->
+                <a href="#about">ABOUT</a>
+                <!-- Opent de aparte contactpagina. -->
+                <a href="contact.html">CONTACT</a>
+            </div>
+        </nav>
+
+        <!-- HERO-INHOUD: alle teksten en afbeeldingen in het bovenste deel. -->
+        <div class="hero-content">
+            <!-- Kleine informatieteksten bovenaan de hero. -->
+            <div class="hero-top-text">
+                <p>CREATIVE PORTFOLIO</p>
+                <p>GRONINGEN / NL</p>
+                <p>2026</p>
+            </div>
+            <!-- Extra titeltekst die via de class hero-title in CSS kan worden vormgegeven. -->
+            <div class="hero-title"> NOA </div>
+
+            <!-- Klein label met mijn creatieve interessegebieden. -->
+            <p class="hero-label">
+                CREATIVE /FILM / MUSIC / PHOTOGRAPHY
+            </p>
+
+            <!-- PORTRET: drie lagen van dezelfde foto maken samen het glitch-effect. -->
+            <div class="hero-portrait">
+                <!-- Normale foto: de basislaag. -->
+                <img src="images/noa-cutout.png" alt="Portrait of Noa" class="hero-image hero-image-main">
+                <!-- Rode effectlaag: de kleur en beweging worden in CSS ingesteld. -->
+                <img src="images/noa-cutout.png" alt="" class="hero-image hero-image-red">
+                <!-- Cyaan/blauwe effectlaag: maakt het glitch-effect compleet. -->
+                <img src="images/noa-cutout.png" alt="" class="hero-image hero-image-cyan">
+            </div>
+
+            <!-- H1: de belangrijkste kop van de homepage. -->
+            <h1>NOA Bossina</h1>
+        </div>
+
+        <!-- ONDERSTE NAVIGATIEBLOKKEN: drie klikbare vakken onder de hero. -->
+        <div class="hero-bottom">
+            <!-- Vak 01: springt naar het About Me-gedeelte op dezelfde pagina. -->
+            <a href="#about" class="bottom-column">
+                <p class="bottom-number">01</p>
+                <p>ABOUT ME</p>
+            </a>
+
+            <!-- Vak 02: gaat naar de aparte pagina met mijn interesses. -->
+            <a href="interests.html" class="bottom-column">
+                <p class="bottom-number">02</p>
+                <p>
+                    FILM / PHOTOGRAPHY<br>
+                    MUSIC
+                </p>
+            </a>
+
+            <!-- Vak 03: nodigt uit om verder naar beneden te scrollen. -->
+            <a href="#about" class="bottom-column">
+                <p class="bottom-number">03</p>
+                <p>SCROLL TO EXPLORE ↓</p>
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN: de belangrijkste inhoud van de pagina, buiten de header. -->
+    <main>
+        <!-- ABOUT-SECTIE: persoonlijke introductie; id="about" is het doel van de #about-links. -->
+        <section class="about" id="about">
+            <!-- Bovenste rij met sectienummer, omschrijving en naam. -->
+            <div class="about-header">
+                <p>[01 / ABOUT ME]</p>
+                <p>Personal introduction</p>
+                <p>Noa Bossina</p>
+            </div>
+
+            <!-- Grote introductietitel met een foto eroverheen/erachter. -->
+            <div class="about-title">
+                <!-- H2: kop van de About-sectie. -->
+                <h2>
+                    SOMEWHERE BETWEEN<br>
+                    FILM, MUSIC<br>
+                    & CHAOS.
+                </h2>
+                <!-- Container waarmee de foto in CSS gepositioneerd wordt. -->
+                <div class="about-photo-wrap">
+                    <!-- Foto die bij de persoonlijke introductie hoort. -->
+                    <img src="images/about/about-noa.jpg" alt="Portrait of Noa" class="about-photo">
+                </div>
+            </div>
+
+            <!-- Twee tekstblokken met een korte introductie over mij. -->
+            <div class="about-info">
+                <!-- Eerste alinea: wie ik ben en wat ik leuk vind. -->
+                <p class="about-intro">
+                    I'm Noa, a creative media student with a love for
+                    visual storytelling, film, photography and music.
+                </p>
+
+                <!-- Tweede alinea: mijn manier van creatief werken. -->
+                <p class="about-extra">
+                    I like experimenting with ideas that feel a little
+                    unexpected, messy or different — whether that's
+                    through a camera, a song or a design.
+                </p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
